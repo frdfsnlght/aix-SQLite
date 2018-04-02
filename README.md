@@ -66,7 +66,7 @@ I took the opportunity to learn how to build an App Inventor extension in additi
 
 ## Properties
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDBName.png) !(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDBName.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDBName.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDBName.png)
 
 This property defines the name of the database file. It's default value is "db.sqlite". Changing the name after
 opening a database has no effect on the database. Use this property to change the name before the database
