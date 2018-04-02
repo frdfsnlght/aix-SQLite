@@ -78,7 +78,7 @@ This is the "version" of the database. An app will define what version of the da
 When a database is opened and its version doesn't match the this version, either the "DatabaseUpgrade" or
 "DatabaseDowngrade" event will be fired to allow you to modify the database to make it compatible.
 
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDBReturnColumnNames.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDBReturnColumnNames.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetReturnColumnNames.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetReturnColumnNames.png)
 
 This setting effects how result rows are returned by the various Select methods. When this property is false,
 each element of the list returned by the Select methods will be a simple list of values which represent the
@@ -187,7 +187,7 @@ but is an important tool for ensuring data integrity in your database.
 ### Data Manipulation
 
 The methods in this section deal with creating, deleting and otherwise manipulating
-data in the database. They all have asynchronous versions. Asynchronous methods
+data in the database. They all have asynchronous versions and corresponding events. Asynchronous methods
 perform their work on a background thread so they don't block the main UI thread. This is
 important for a good user experience during operations that might take more than a 100 milliseconds
 or so. Blocking the main UI thread will make your application appear to "freeze" and become
@@ -218,6 +218,7 @@ tag to differentiate between multiple results in the event handler.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Delete.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterDelete.png)
 
+## Technical Details
 
 
 
