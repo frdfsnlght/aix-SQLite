@@ -72,13 +72,13 @@ This property defines the name of the database file. It's default value is "db.s
 opening a database has no effect on the database. Use this property to change the name before the database
 is opened.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDBVersion.png) !(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDBVersion.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDBVersion.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDBVersion.png)
 
 This is the "version" of the database. An app will define what version of the database it's compatible with.
 When a database is opened and its version doesn't match the this version, either the "DatabaseUpgrade" or
 "DatabaseDowngrade" event will be fired to allow you to modify the database to make it compatible.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDBReturnColumnNames.png) !(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDBReturnColumnNames.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDBReturnColumnNames.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDBReturnColumnNames.png)
 
 This setting effects how result rows are returned by the various Select methods. When this property is false,
 each element of the list returned by the Select methods will be a simple list of values which represent the
@@ -86,12 +86,12 @@ values of the columns selected for each matched row. When this property is true,
 list returned by the Select methods will be a list of pairs which represent the
 name and values of the columns selected for each matched row.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDebugToast.png) !(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDebugToast.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDebugToast.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDebugToast.png)
 
 This property turns on or off simple debug messages. These messages are displayed as Toast messages and disappear
 after a couple of seconds. Turn this on while debugging your application to see what the database is doing.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDebugDialog.png) !(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDebugDialog.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/GetDebugDialog.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SetDebugDialog.png)
 
 This property turns on or off simple debug messages. These messages are displayed as dialogs with an OK button.
 The messages don't disappear until the dialog is dismissed. Turn this on while debugging your application to see what
@@ -102,16 +102,16 @@ the database is doing.
 The events in this section don't include events related to asynchronous methods, which are 
 included as part of the description for each of those methods.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseOpened.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseOpened.png)
 
 This event fires after a database has been opened, and possibly created.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseCreated.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseCreated.png)
 
 This event fires after a database has been created because the file didn't exist when it
 was opened. This event fires before the DatabaseOpen event.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseUpgrade.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseUpgrade.png)
 
 This event fires when the DBVersion property value is greater than the existing database version
 when it's opened. After the event finishes, the database version is set to match the DBVersion
@@ -120,7 +120,7 @@ property.
 Use this method to make whatever changes to your database are necessary to make it match the
 version your application expects.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseDowngrade.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseDowngrade.png)
 
 This event fires when the DBVersion property value is less than the existing database version
 when it's opened. After the event finishes, the database version is set to match the DBVersion
@@ -130,11 +130,11 @@ downgrades to an older version of your app.
 Use this method to make whatever changes to your database are necessary to make it match the
 version your application expects.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseClosed.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseClosed.png)
 
 This event fires when the database is closed.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SQLError.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SQLError.png)
 
 This event fires whenever there is a SQL error. This usually happens when you do something
 wrong like trying to select from a table or column that doesn't exist, or commit a transaction
@@ -144,18 +144,18 @@ when you haven't started one.
 
 ### General
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabasePath.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExportDatabase.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ImportDatabase.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteDatabase.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseExists.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/OpenDatabase.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/CloseDatabase.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/IsDatabaseOpen.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableCount.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableExists.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableNames.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableRowCount.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabasePath.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExportDatabase.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ImportDatabase.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteDatabase.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseExists.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/OpenDatabase.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/CloseDatabase.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/IsDatabaseOpen.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableCount.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableExists.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableNames.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableRowCount.png)
 
 ### Transactions
 
@@ -167,9 +167,9 @@ a transaction means, "forget all those things I told you to do." This, of course
 simplified description. Google around for more information. Use of transactions is optional
 but is an important tool for ensuring data integrity in your database.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/BeginTransaction.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/CommitTransation.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/RollbackTransaction.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/BeginTransaction.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/CommitTransation.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/RollbackTransaction.png)
 
 ### Data Manipulation
 
@@ -187,32 +187,32 @@ version with the addition of a "tag" parameter. The "tag" is an arbitrary string
 and will be passed to the "After" event that corresponds to the asynchronous method. You can use the
 tag to differentiate between multiple results in the event handler.
 
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Execute.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteAsync.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecute.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFile.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFileAsync.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecuteFile.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQL.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQLAsync.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Select.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectAsync.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterSelect.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Insert.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertAsync.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsert.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFile.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFileAsync.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsertFile.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Replace.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ReplaceAsync.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterReplace.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Update.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/UpdateAsync.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterUpdate.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Delete.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteAsync.png)
-!(https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterDelete.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Execute.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteAsync.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecute.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFile.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFileAsync.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecuteFile.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQL.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQLAsync.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Select.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectAsync.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterSelect.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Insert.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertAsync.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsert.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFile.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFileAsync.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsertFile.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Replace.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ReplaceAsync.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterReplace.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Update.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/UpdateAsync.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterUpdate.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Delete.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteAsync.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterDelete.png)
 
 
 
