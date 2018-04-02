@@ -145,16 +145,27 @@ when you haven't started one.
 ### General
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabasePath.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExportDatabase.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ImportDatabase.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteDatabase.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseExists.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/OpenDatabase.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/CloseDatabase.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/IsDatabaseOpen.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableCount.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableExists.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableNames.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableRowCount.png)
 
 ### Transactions
@@ -168,7 +179,9 @@ simplified description. Google around for more information. Use of transactions 
 but is an important tool for ensuring data integrity in your database.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/BeginTransaction.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/CommitTransation.png)
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/RollbackTransaction.png)
 
 ### Data Manipulation
@@ -187,32 +200,23 @@ version with the addition of a "tag" parameter. The "tag" is an arbitrary string
 and will be passed to the "After" event that corresponds to the asynchronous method. You can use the
 tag to differentiate between multiple results in the event handler.
 
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Execute.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteAsync.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecute.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFile.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFileAsync.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecuteFile.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQL.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQLAsync.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Select.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectAsync.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterSelect.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Insert.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertAsync.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsert.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFile.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFileAsync.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsertFile.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Replace.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ReplaceAsync.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterReplace.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Update.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/UpdateAsync.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterUpdate.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Delete.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteAsync.png)
-![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterDelete.png)
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Execute.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecute.png)
+
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFile.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFileAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecuteFile.png)
+
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQL.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQLAsync.png)
+
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Select.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterSelect.png)
+
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Insert.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsert.png)
+
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFile.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFileAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsertFile.png)
+
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Replace.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ReplaceAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterReplace.png)
+
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Update.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/UpdateAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterUpdate.png)
+
+![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Delete.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterDelete.png)
 
 
 
