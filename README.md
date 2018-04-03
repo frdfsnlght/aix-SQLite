@@ -196,7 +196,7 @@ Returns true if the database is open, false otherwise.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableCount.png)
 
-Returns the number of tables the open database.
+Returns the number of tables in the open database.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableExists.png)
 
@@ -222,9 +222,16 @@ but is an important tool for ensuring data integrity in your database.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/BeginTransaction.png)
 
+Begins a transaction. Transactions can be nested (transactions inside transactions).
+Make sure to call CommitTransation or RollbackTransaction for each opened transaction.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/CommitTransation.png)
 
+Commits (saves) changes made during the transaction to the database.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/RollbackTransaction.png)
+
+Rolls back (discards) changes made during the transaction to the database.
 
 ### Data Manipulation
 
@@ -251,7 +258,7 @@ See the section below about bind parameters for more information.
 
 These methods execute one or more SQL statements contained in a file. The file can contain both SQL statements,
 blank lines, and comments. In-line comments start with "--" and end at the end of the line. Multi-line comments
-start with "/*" and end with "*/". Line continuation is also supported by using "\" as the last character in a broken
+start with "\&ast;" and end with "&ast;/". Line continuation is also supported by using "\\" as the last character in a broken
 line. Each statement can optionally end in a semicolon.
 The literal string "\n" will be replaced with an actual newline character in any SQL statement.
 Execution stops at the first error. The methods return the number of statements successfully executed.
@@ -297,9 +304,9 @@ These methods execute a SQL INSERT statement that returns the unique row ID of t
 
 These methods perform a bulk insert of CSV formatted data from a file.
 The first non-empty line in the file should be a comma separated list of column names from the target table to insert
-values into. The second an subsequent non-empty lines should each be a comma separated list of values.
+values into. The second and subsequent non-empty lines should each be a comma separated list of values.
 Each of these lines will result in a new row inserted into the target table.
-Line continuation is also supported by using "\" as the last character in a broken
+Line continuation is also supported by using "\\" as the last character in a broken
 line. The literal string "\n" will be replaced with an actual newline character.
 Execution stops at the first error. The methods return the number of rows successfully inserted.
 
@@ -326,7 +333,7 @@ See the section below about bind parameters for more information.
 
 These methods execute a SQL DELETE statement, with optional bind parameters, that returns the number of
 rows that are deleted. If no whereClause is provided, which means "delete all the rows", a zero is returned.
-See the section below about bind parameters for more information.
+See the section below about [bind parameters](#bind-parameters) for more information.
 
 #### Bind Parameters
 
@@ -355,7 +362,7 @@ We can accomplish the same thing by passing in a whereClause like this:
 name = ? AND catCount > ?
 ```
 
-And a bindParams like this:
+And a bindParams list like this:
 
     ("Unknown", 10)
     
