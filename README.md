@@ -3,6 +3,12 @@
 [App Inventor](http://appinventor.mit.edu/)/[Thunkable](https://thunkable.com/)/[AppyBuilder](http://appybuilder.com/)/[Makeroid](https://www.makeroid.io/)/etc.
 extension for [SQLite](https://www.sqlite.org/)
 
+[SQLite](https://www.sqlite.org/) is a small, fast, self-contained SQL (Structured Query Language) database engine
+built into Android.
+[SQL](https://www.w3schools.com/sql/) statements are used to create, select, update, and delete data in one or
+more tables. SQL allows for complex relationships between tables and provides an expressive means to
+find data stored in a database.
+
 ## Features
 
 * Control over database name
@@ -21,7 +27,7 @@ If you don't see a feature you'd like or need, tell me about it. I can't promise
 
 ## Download
 
-TODO: add link to aix file
+[Download AIX](https://github.com/frdfsnlght/aix-SQLite/raw/master/org.bennedum.SQLite.aix)
 
 ## Installation
 
@@ -35,17 +41,13 @@ Installation may depend on which App Inventor flavor you're using, but I think t
    extension appear in the "Extensions" category.
 6. Drag the SQLite extension into your app and carry on!
 
-TODO: add information about app size increase
-
-
 ## Donate
 
 If you find this extension useful, please consider donating by clicking the button below.
 If you're using this extension in an app you're making money from, please STRONGLY consider donating even more.
 The recommended donation is $10 USD, but I'll accept anything you think the extension is worth to you.
 
-TODO: add link here
-
+[![PayPal](https://www.paypalobjects.com/webstatic/en_US/i/buttons/pp-acceptance-medium.png)](https://paypal.me/frdfsnlght/10)
 
 ## Background
 
@@ -146,27 +148,67 @@ when you haven't started one.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabasePath.png)
 
+Returns the path to the database file, whether or not it exists.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExportDatabase.png)
+
+Makes a byte-for-byte copy of an unopened database file to the specified file.
+A prefix of "/" specifies a file on the external SD card.
+No prefix specifies a path relative to the app's private storage.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ImportDatabase.png)
 
+Makes a byte-for-byte copy of a specified SQLite database file to the file named by the
+DBName property.
+A prefix of "//" specifies a file in the app's assets.
+A prefix of "/" specifies a file on the external SD card.
+No prefix specifies a path relative to the app's private storage.
+
+This method is useful for initializing a database on an app's first run. Simply upload a fully
+formed SQLite database file into your app's assets and this function will copy it into place.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteDatabase.png)
+
+Deletes the unopened database file named by the DBName property. Use this method to completely
+destroy the database and start over.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseExists.png)
 
+Returns true if the database file named by the DBName property exists, false otherwise.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/OpenDatabase.png)
+
+Opens the database named by the DBName property. If the file doesn't exist, it will be
+created and the DatabaseCreated event will be fired.
+If the file has a version different than the DBVersion property, either the
+DatabaseUpgrade or DatabaseDowngrade events will be fired.
+After any of these events are fired, the DatabaseOpened event fill fire last.
+Opening an already open database has no effect.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/CloseDatabase.png)
 
+Closes a previously opened database, rolling back any uncommitted transactions,
+and fires the DatabaseClosed event. Closing an already closed database has no effect.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/IsDatabaseOpen.png)
+
+Returns true if the database is open, false otherwise.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableCount.png)
 
+Returns the number of tables the open database.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableExists.png)
+
+Returns true if the named table exists in the open database, false otherwise.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableNames.png)
 
+Returns a list of table names in the open database.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/TableRowCount.png)
+
+Returns the number of rows in a table in the open database.
 
 ### Transactions
 
@@ -202,28 +244,118 @@ tag to differentiate between multiple results in the event handler.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Execute.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecute.png)
 
+These methods execute any arbitrary, non-SELECT SQL statement, optionally binding parameters.
+See the section below about bind parameters for more information.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFile.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFileAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecuteFile.png)
+
+These methods execute one or more SQL statements contained in a file. The file can contain both SQL statements,
+blank lines, and comments. In-line comments start with "--" and end at the end of the line. Multi-line comments
+start with "/*" and end with "*/". Line continuation is also supported by using "\" as the last character in a broken
+line. Each statement can optionally end in a semicolon.
+The literal string "\n" will be replaced with an actual newline character in any SQL statement.
+Execution stops at the first error. The methods return the number of statements successfully executed.
+
+A file name prefix of "//" specifies a file in the app's assets.
+A file name prefix of "/" specifies a file on the external SD card.
+No prefix specifies a path relative to the app's private storage.
+
+It is recommended these methods should be used inside a transaction since they can result in
+partial execution in the event of an error. Typically, you want all the statements in the file to
+work, or none at all.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQL.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectSQLAsync.png)
 
+These methods execute a SQL SELECT statement, with optional bind parameters, that returns a list with
+zero or more rows of data.
+See the section below about bind parameters for more information.
+
+Although not shown here, the AfterSelect event is fired from the SelectSQLAsync method when the query is complete.
+
+The list returned by these methods has a row element list for each row matched by the query.
+The elements in the row element list depend on the ReturnColumnNames property.
+When this property is true, the elements in the row element list are themselves lists, each with two elements;
+a column name and a column value. When the property is false, the elements in the row element list
+are the column values in the same order as the requested columns in the SELECT query.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Select.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/SelectAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterSelect.png)
+
+These methods execute a SQL SELECT statement, with optional bind parameters, that returns a list with
+zero or more rows of data.
+See the section below about bind parameters for more information.
+
+This is a convenience method that avoids the need to construct the entire SQL statement. A list if column names
+and various query clauses can be provided to simplify the call.
+
+See the SelectSQL method for a description of the returned list.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Insert.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsert.png)
 
+These methods execute a SQL INSERT statement that returns the unique row ID of the inserted row.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFile.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/InsertFileAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterInsertFile.png)
+
+These methods perform a bulk insert of CSV formatted data from a file.
+The first non-empty line in the file should be a comma separated list of column names from the target table to insert
+values into. The second an subsequent non-empty lines should each be a comma separated list of values.
+Each of these lines will result in a new row inserted into the target table.
+Line continuation is also supported by using "\" as the last character in a broken
+line. The literal string "\n" will be replaced with an actual newline character.
+Execution stops at the first error. The methods return the number of rows successfully inserted.
+
+A file name prefix of "//" specifies a file in the app's assets.
+A file name prefix of "/" specifies a file on the external SD card.
+No prefix specifies a path relative to the app's private storage.
+
+It is recommended these methods should be used inside a transaction since they can result in
+partial execution in the event of an error. Typically, you want all the statements in the file to
+work, or none at all.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Replace.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ReplaceAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterReplace.png)
 
+These methods execute a SQL REPLACE statement that returns the unique row ID of the inserted or updated row.
+A SQL REPLACE statement means "insert if it doesn't exist, update it if it does".
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Update.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/UpdateAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterUpdate.png)
+
+These methods execute a SQL UPDATE statement, with optional bind parameters, that returns the number of
+rows that are updated.
+See the section below about bind parameters for more information.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Delete.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterDelete.png)
 
-## Technical Details
+These methods execute a SQL DELETE statement, with optional bind parameters, that returns the number of
+rows that are deleted. If no whereClause is provided, which means "delete all the rows", a zero is returned.
+See the section below about bind parameters for more information.
 
+#### Bind Parameters
 
+Many of the methods above include whereClause and bindParams arguments. Together, the arguments provide a
+simple way to limit the rows operated on and prevent SQL injection attacks. The idea is simple. The whereClause
+is a string in the form of a SQL WHERE clause, without the word "WHERE". Any question marks in the whereClause
+are automatically replaced by the corresponding value from the bindParams list before the statement is
+executed by the database engine. The database engine deals with escaping the values as necessary. This
+allows the developer to skip building a complex whereClause string using concatenation.
 
+As an example, suppose we want to select rows from a table like this:
 
+```sql
+SELECT * FROM myTable WHERE name = 'Unknown' AND catCount > 10
+```
 
+The WHERE clause in this SQL statement is:
 
+```sql
+name = 'Unknown' AND catCount > 10
+```
 
+We can accomplish the same thing by passing in a whereClause like this:
 
+```sql
+name = ? AND catCount > ?
+```
+
+And a bindParams like this:
+
+    ("Unknown", 10)
+    
