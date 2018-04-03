@@ -252,13 +252,13 @@ tag to differentiate between multiple results in the event handler.
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Execute.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecute.png)
 
 These methods execute any arbitrary, non-SELECT SQL statement, optionally binding parameters.
-See the section below about bind parameters for more information.
+See the section below about [bind parameters](#bind-parameters) for more information.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFile.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ExecuteFileAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterExecuteFile.png)
 
 These methods execute one or more SQL statements contained in a file. The file can contain both SQL statements,
 blank lines, and comments. In-line comments start with "--" and end at the end of the line. Multi-line comments
-start with "\&ast;" and end with "&ast;/". Line continuation is also supported by using "\\" as the last character in a broken
+start with "\\&ast;" and end with "&ast;/". Line continuation is also supported by using "\\" as the last character in a broken
 line. Each statement can optionally end in a semicolon.
 The literal string "\n" will be replaced with an actual newline character in any SQL statement.
 Execution stops at the first error. The methods return the number of statements successfully executed.
@@ -275,7 +275,7 @@ work, or none at all.
 
 These methods execute a SQL SELECT statement, with optional bind parameters, that returns a list with
 zero or more rows of data.
-See the section below about bind parameters for more information.
+See the section below about [bind parameters](#bind-parameters) for more information.
 
 Although not shown here, the AfterSelect event is fired from the SelectSQLAsync method when the query is complete.
 
@@ -289,7 +289,7 @@ are the column values in the same order as the requested columns in the SELECT q
 
 These methods execute a SQL SELECT statement, with optional bind parameters, that returns a list with
 zero or more rows of data.
-See the section below about bind parameters for more information.
+See the section below about [bind parameters](#bind-parameters) for more information.
 
 This is a convenience method that avoids the need to construct the entire SQL statement. A list if column names
 and various query clauses can be provided to simplify the call.
@@ -327,7 +327,7 @@ A SQL REPLACE statement means "insert if it doesn't exist, update it if it does"
 
 These methods execute a SQL UPDATE statement, with optional bind parameters, that returns the number of
 rows that are updated.
-See the section below about bind parameters for more information.
+See the section below about [bind parameters](#bind-parameters) for more information.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/Delete.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteAsync.png) ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/AfterDelete.png)
 
