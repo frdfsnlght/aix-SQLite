@@ -13,6 +13,21 @@ built into Android.
 more tables. SQL allows for complex relationships between tables and provides an expressive means to
 find data stored in a database.
 
+## Contents
+
+* [Features](#features)
+* [Download](#download)
+* [Donate](#donate)
+* [Background](#background)
+* [Properties](#properties)
+* [Events](#events)
+* [Methods](#methods)
+    * [General](#general)
+    * [Transactions](#transactions)
+    * [Data Manipulation](#data-manipulation)
+        * [Bind Parameters](#bind-parameters)
+* [Samples](#samples)
+
 ## Features
 
 * Control over database name
