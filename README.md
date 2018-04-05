@@ -1,11 +1,6 @@
 # SQLite
 
-[App Inventor](http://appinventor.mit.edu/)/
-[Thunkable](https://thunkable.com/)/
-[AppyBuilder](http://appybuilder.com/)/
-[Makeroid](https://www.makeroid.io/)/
-[Blockly Studio](https://www.blocklystudio.xyz)/
-etc. extension for [SQLite](https://www.sqlite.org/)
+[App Inventor](http://appinventor.mit.edu/), [Thunkable](https://thunkable.com/), [AppyBuilder](http://appybuilder.com/), [Makeroid](https://www.makeroid.io/), [Blockly Studio](https://www.blocklystudio.xyz) etc. extension for [SQLite](https://www.sqlite.org/)
 
 [SQLite](https://www.sqlite.org/) is a small, fast, self-contained SQL (Structured Query Language) database engine
 built into Android.
