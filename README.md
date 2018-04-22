@@ -118,6 +118,10 @@ This property turns on or off simple debug messages. These messages are displaye
 The messages don't disappear until the dialog is dismissed. Turn this on while debugging your application to see what
 the database is doing.
 
+*NOTE:* It has been demonstrated that dialogs may be displayed in an order contrary to the actual
+order of the operations indicated by the dialogs. For this reason, it's recommended that the DebugToast
+be the preferred method used for debugging.
+
 ## Events
 
 The events in this section don't include events related to asynchronous methods, which are 
