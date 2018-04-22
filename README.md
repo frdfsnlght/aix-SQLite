@@ -1,6 +1,11 @@
 # SQLite
 
-[App Inventor](http://appinventor.mit.edu/), [Thunkable](https://thunkable.com/), [AppyBuilder](http://appybuilder.com/), [Makeroid](https://www.makeroid.io/), [Blockly Studio](https://www.blocklystudio.xyz) etc. extension for [SQLite](https://www.sqlite.org/)
+[App Inventor](http://appinventor.mit.edu/),
+[Thunkable](https://thunkable.com/),
+[AppyBuilder](http://appybuilder.com/),
+[Makeroid](https://www.makeroid.io/),
+[Blockly Studio](https://www.blocklystudio.xyz),
+etc. extension for [SQLite](https://www.sqlite.org/)
 
 [SQLite](https://www.sqlite.org/) is a small, fast, self-contained SQL (Structured Query Language) database engine
 built into Android.
@@ -127,6 +132,9 @@ This event fires after a database has been opened, and possibly created.
 This event fires after a database has been created because the file didn't exist when it
 was opened. This event fires before the DatabaseOpen event.
 
+*NOTE:* There is a case when this event will fire event if the database file exists. See the NOTE
+in the description of the ImportDatabase method.
+
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DatabaseUpgrade.png)
 
 This event fires when the DBVersion property value is greater than the existing database version
@@ -173,13 +181,20 @@ No prefix specifies a path relative to the app's private storage.
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/ImportDatabase.png)
 
 Makes a byte-for-byte copy of a specified SQLite database file to the file named by the
-DBName property.
+DBName property. The imported file must be a fully formed binary SQLite database file, *NOT*
+raw SQL statements (use the ExecuteFile method for that).
 A prefix of "//" specifies a file in the app's assets.
 A prefix of "/" specifies a file on the external SD card.
 No prefix specifies a path relative to the app's private storage.
 
 This method is useful for initializing a database on an app's first run. Simply upload a fully
 formed SQLite database file into your app's assets and this function will copy it into place.
+
+*NOTE:* If you import a database that does not already contain a fully formed "android_metadata"
+table, the DatabaseCreated event will fire when the database is first opened. The "android_metadata"
+table is where Android keeps track of the database version, so when it doesn't exist, it
+believes the database is new, even if it already contains other tables. Any other existing tables
+will not be modified.
 
 ![Image](https://github.com/frdfsnlght/aix-SQLite/raw/master/docs/images/DeleteDatabase.png)
 
