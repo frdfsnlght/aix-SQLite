@@ -293,7 +293,7 @@ These methods execute one or more SQL statements contained in a file. The file c
 blank lines, and comments. In-line comments start with "--" and end at the end of the line. Multi-line comments
 start with "\\&ast;" and end with "&ast;/". Line continuation is also supported by using "\\" as the last character in a broken
 line. Each statement can optionally end in a semicolon.
-The literal string "\n" will be replaced with an actual newline character in any SQL statement.
+The [literal string](https://www.scaler.com/topics/sql/string-literal/) "\n" will be replaced with an actual newline character in any SQL statement.
 Execution stops at the first error. The methods return the number of statements successfully executed.
 
 A file name prefix of "//" specifies a file in the app's assets.
